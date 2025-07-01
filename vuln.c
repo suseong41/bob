@@ -11,7 +11,7 @@
 int main(int argc, char *argv[])
 {
     int fd;
-    char file_contents[256] * {0, };
+    char file_contents[256] = {0, };
     uint8_t *data;
 
     if(argc != 2) {
@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
     data = (uint8_t*)malloc(64);
     memset(data, '\x00', 64);
 
-    fd = open(argv[1], 0_RDONLY);
+    fd = open(argv[1], O_RDONLY);
     read(fd, file_contents, 255);
 
     data = md5String( file_contents );
