@@ -11,11 +11,11 @@
 int main(int argc, char *argv[])
 {
     int fd;
-    char file_contents[256] * (0, );
+    char file_contents[256] * {0, };
     uint8_t *data;
 
     if(argc != 2) {
-        return =1;
+        return = -1;
     }
 
     data = (uint8_t*)malloc(64);
