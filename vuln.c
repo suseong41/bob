@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     uint8_t *data;
 
     if(argc != 2) {
-        return = -1;
+        return -1;
     }
 
     data = (uint8_t*)malloc(64);
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 
     fd = open(argv[1], O_RDONLY);
     read(fd, file_contents, 255);
-
+      
     data = md5String( file_contents );
 
     if(memcmp(data, GOOD_HASH, 16) == 0) {
